@@ -247,6 +247,331 @@ Navigation
   transition: all 300ms ease-in-out;
 }
 
+/* ===============================
+stylinbg achievements
+ ===================== */
+/* Shared section headings */
+#awards h2,
+#publications h2,
+#interests h2 {
+    margin-bottom: 30px;
+}
+
+
+/* Awards */
+.achievement-list {
+    border-top: 1px solid #e5e5e5;
+}
+
+.achievement-item {
+    display: flex;
+    gap: 30px;
+    padding: 22px 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.achievement-year {
+    min-width: 110px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #477b70;
+    padding-top: 3px;
+}
+
+.achievement-info h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 7px;
+    color: #333;
+}
+
+.achievement-info p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* Publications */
+.publication-list {
+    border-top: 1px solid #e5e5e5;
+}
+
+.publication-item {
+    display: flex;
+    gap: 30px;
+    padding: 25px 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.publication-year {
+    min-width: 70px;
+    font-size: 14px;
+    color: #999;
+    padding-top: 3px;
+}
+
+.publication-info {
+    flex: 1;
+}
+
+.publication-info h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    line-height: 1.5;
+}
+
+.publication-info h3 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.publication-info h3 a:hover {
+    color: #477b70;
+}
+
+.publication-authors {
+    font-size: 13px;
+    color: #777;
+    margin: 0 0 5px;
+}
+
+.publication-venue {
+    font-size: 13px;
+    font-style: italic;
+    color: #888;
+    margin: 0 0 10px;
+}
+
+.publication-links a {
+    display: inline-block;
+    font-size: 12px;
+    color: #477b70;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 600;
+}
+
+.publication-links a:hover {
+    text-decoration: underline;
+}
+
+.all-publications {
+    margin-top: 22px;
+    font-size: 14px;
+}
+
+.all-publications a {
+    color: #477b70;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* Research Interests */
+.interests-intro {
+    max-width: 700px;
+    color: #777;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.interest-card {
+    padding: 22px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    transition: border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.interest-card:hover {
+    border-color: #477b70;
+    transform: translateY(-3px);
+}
+
+.interest-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.interest-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #777;
+    margin: 0;
+}
+
+
+/* Responsive layout */
+@media (max-width: 767px) {
+
+    .achievement-item,
+    .publication-item {
+        gap: 15px;
+    }
+
+    .achievement-year {
+        min-width: 85px;
+    }
+
+    .interest-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .achievement-item,
+    .publication-item {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==================================================
+News
+=====================================*/
+/* News archive */
+.news-archive {
+  margin-top: 30px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.news-year {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.news-year summary {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 10px;
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.2s ease;
+}
+
+.news-year summary::-webkit-details-marker {
+  display: none;
+}
+
+.news-year summary:hover {
+  background: #f8f9fa;
+}
+
+.news-year .year {
+  font-size: 23px;
+  font-weight: 600;
+  color: #333;
+  min-width: 75px;
+}
+
+.news-count {
+  font-size: 13px;
+  color: #888;
+}
+
+.year-arrow {
+  margin-left: auto;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #777;
+  border-bottom: 2px solid #777;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  margin-right: 8px;
+  margin-top: -5px;
+}
+
+.news-year[open] .year-arrow {
+  transform: rotate(225deg);
+  margin-top: 5px;
+}
+
+/* News entries */
+.news-list {
+  list-style: none;
+  padding: 0 15px 15px 15px;
+  margin: 0;
+}
+
+.news-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 13px 0;
+}
+
+.news-list time {
+  min-width: 85px;
+  color: #999;
+  font-size: 13px;
+  padding-top: 2px;
+}
+
+.news-content {
+  flex: 1;
+}
+
+.news-content p {
+  display: inline;
+  margin: 0;
+  color: #444;
+  line-height: 1.6;
+}
+
+.news-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #477b70;
+  background: #edf4f1;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+@media (max-width: 600px) {
+  .news-year summary {
+      padding: 16px 5px;
+  }
+
+  .news-year .year {
+      font-size: 20px;
+  }
+
+  .news-list li {
+      gap: 10px;
+  }
+
+  .news-list time {
+      min-width: 65px;
+      font-size: 12px;
+  }
+
+  .news-list {
+      padding-left: 8px;
+      padding-right: 8px;
+  }
+}
+
 /* ==========================================================================
 Hero
 ========================================================================== */
