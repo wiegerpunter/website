@@ -370,48 +370,98 @@ stylinbg achievements
 }
 
 
-/* Research Interests */
+/* Personal Interests */
+
 .interests-intro {
-    max-width: 700px;
-    color: #777;
-    line-height: 1.7;
-    margin-bottom: 25px;
+  max-width: 700px;
+  color: #777;
+  line-height: 1.7;
+  margin-bottom: 25px;
 }
 
 .interest-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
 .interest-card {
-    padding: 22px;
-    border: 1px solid #e5e5e5;
-    border-radius: 5px;
-    transition: border-color 0.2s ease,
-                transform 0.2s ease;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  transition: border-color 0.25s ease,
+              transform 0.25s ease,
+              box-shadow 0.25s ease;
 }
 
 .interest-card:hover {
-    border-color: #477b70;
-    transform: translateY(-3px);
+  border-color: #477b70;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.interest-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.interest-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.interest-card:hover .interest-image img {
+  transform: scale(1.06);
+}
+
+.interest-content {
+  padding: 20px 22px 22px;
 }
 
 .interest-card h3 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 10px;
 }
 
 .interest-card p {
-    font-size: 13px;
-    line-height: 1.7;
-    color: #777;
-    margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #777;
+  margin: 0;
 }
 
+/* Responsive layout */
 
+@media (max-width: 767px) {
+  .interest-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .interest-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .interest-image {
+      height: 200px;
+  }
+}
+
+/* Accessibility: respect reduced motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .interest-card,
+  .interest-image img {
+      transition: none;
+  }
+}
 /* Responsive layout */
 @media (max-width: 767px) {
 
